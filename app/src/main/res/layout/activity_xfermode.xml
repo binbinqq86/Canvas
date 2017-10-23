@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#aa5566"
+    tools:context="com.example.tb.canvas.XfermodeActivity">
+    
+    <Button
+        android:id="@+id/bt_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="clear"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    
+    <Button
+        android:id="@+id/bt_src"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="src"
+        app:layout_constraintLeft_toRightOf="@id/bt_clear"
+        app:layout_constraintTop_toTopOf="parent"/>
+    
+    <Button
+        android:id="@+id/bt_dst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="dst"
+        app:layout_constraintLeft_toRightOf="@id/bt_src"
+        app:layout_constraintTop_toTopOf="parent"/>
+    
+    <Button
+        android:id="@+id/bt_src_over"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="src_over"
+        app:layout_constraintLeft_toRightOf="@id/bt_dst"
+        app:layout_constraintTop_toTopOf="parent"/>
+    
+    <Button
+        android:id="@+id/bt_dst_over"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="dst_over"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_src_over"/>
+    
+    <Button
+        android:id="@+id/bt_src_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="src_in"
+        app:layout_constraintLeft_toRightOf="@id/bt_dst_over"
+        app:layout_constraintTop_toBottomOf="@id/bt_src_over"/>
+    
+    <Button
+        android:id="@+id/bt_dst_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="dst_in"
+        app:layout_constraintLeft_toRightOf="@id/bt_src_in"
+        app:layout_constraintTop_toBottomOf="@id/bt_src_over"/>
+    
+    <Button
+        android:id="@+id/bt_src_out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="src_out"
+        app:layout_constraintLeft_toRightOf="@id/bt_dst_in"
+        app:layout_constraintTop_toBottomOf="@id/bt_src_over"/>
+    
+    <Button
+        android:id="@+id/bt_dst_out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="dst_out"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_src_out"/>
+    
+    <Button
+        android:id="@+id/bt_src_a_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="src_a_top"
+        app:layout_constraintLeft_toRightOf="@id/bt_dst_out"
+        app:layout_constraintTop_toBottomOf="@id/bt_src_out"/>
+    
+    <Button
+        android:id="@+id/bt_dst_a_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="dst_a_top"
+        app:layout_constraintLeft_toRightOf="@id/bt_src_a_top"
+        app:layout_constraintTop_toBottomOf="@id/bt_src_out"/>
+    
+    <Button
+        android:id="@+id/bt_x_or"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="x_or"
+        app:layout_constraintLeft_toRightOf="@id/bt_dst_a_top"
+        app:layout_constraintTop_toBottomOf="@id/bt_src_out"/>
+    
+    <Button
+        android:id="@+id/bt_darken"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="darken"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_x_or"/>
+    
+    <Button
+        android:id="@+id/bt_lighten"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="lighten"
+        app:layout_constraintLeft_toRightOf="@id/bt_darken"
+        app:layout_constraintTop_toBottomOf="@id/bt_x_or"/>
+    
+    <Button
+        android:id="@+id/bt_multiply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="multiply"
+        app:layout_constraintLeft_toRightOf="@id/bt_lighten"
+        app:layout_constraintTop_toBottomOf="@id/bt_x_or"/>
+    
+    <Button
+        android:id="@+id/bt_screen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="screen"
+        app:layout_constraintLeft_toRightOf="@id/bt_multiply"
+        app:layout_constraintTop_toBottomOf="@id/bt_x_or"/>
+    
+    <Button
+        android:id="@+id/bt_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_screen"/>
+    
+    <Button
+        android:id="@+id/bt_overlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="overlay"
+        app:layout_constraintLeft_toRightOf="@id/bt_add"
+        app:layout_constraintTop_toBottomOf="@id/bt_screen"/>
+    
+    <com.example.tb.canvas.CanvasView
+        android:id="@+id/cv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_add"/>
+</android.support.constraint.ConstraintLayout>
