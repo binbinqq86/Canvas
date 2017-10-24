@@ -97,6 +97,7 @@ public class CanvasView extends View{
                 mPaint.setColor(Color.BLUE);
                 canvas.drawRect(rf1,mPaint);
                 mPaint.setColor(Color.CYAN);
+                mPaint.setStyle(Paint.Style.FILL);
                 canvas.drawOval(rf1,mPaint);
                 break;
             case DRAW_PorterDuffXfermode:
