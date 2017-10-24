@@ -53,6 +53,7 @@ public class CanvasView extends View{
         mPaint.setStrokeJoin(Paint.Join.ROUND);// 笔刷图形样式
         mPaint.setStrokeCap(Paint.Cap.ROUND);// 设置画笔转弯的连接风格
         mPaint.setDither(true);//防抖动
+        mPaint.setFilterBitmap(true);
         bitmap= BitmapFactory.decodeResource(getResources(),R.mipmap.aaa);
         setBackgroundColor(Color.GREEN);
     }
@@ -139,24 +140,23 @@ public class CanvasView extends View{
      * @param canvas
      */
     private void type1(Canvas canvas) {
-        Paint pt=new Paint(mPaint);
-//        int count=canvas.saveLayer(0,0,width,height,mPaint,Canvas.ALL_SAVE_FLAG);
+        int count=canvas.saveLayer(0,0,width,height,mPaint,Canvas.ALL_SAVE_FLAG);
         //绘制dst
         canvas.drawBitmap(bitmap,0,0,mPaint);
         
         //创建遮罩层bitmap(宽高覆盖整个绘制区域，这样clear模式直接清画布了)
         Bitmap bb=Bitmap.createBitmap(width,height, Bitmap.Config.ARGB_8888);
         Canvas cc=new Canvas(bb);
-        pt.setColor(Color.YELLOW);
-        cc.drawCircle(width/2f,height/2f,width/2f>height/2f?height/2f:width/2f,pt);
+        mPaint.setColor(Color.YELLOW);
+        cc.drawCircle(width/2f,height/2f,width/2f>height/2f?height/2f:width/2f,mPaint);
         
         //设置模式
-        pt.setXfermode(new PorterDuffXfermode(xfermode));
+        mPaint.setXfermode(new PorterDuffXfermode(xfermode));
         //绘制src
-        canvas.drawBitmap(bb,0,0,pt);
+        canvas.drawBitmap(bb,0,0,mPaint);
         //还原
-//        mPaint.setXfermode(null);
-//        canvas.restoreToCount(count);
+        mPaint.setXfermode(null);
+        canvas.restoreToCount(count);
     }
     
     public void setMode(PorterDuff.Mode mode){
